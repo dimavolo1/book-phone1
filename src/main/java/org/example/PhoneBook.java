@@ -23,8 +23,11 @@ public class PhoneBook {
         }
         return "Имя не найдено";
     }
-    public static String findByName(String name) {
-        return null;
+    public  String findByName(String name) {
+        if (phoneBook.containsKey(name)) {
+            return phoneBook.get(name);
+        }
+        return "Номер не найден";
     }
 
 
