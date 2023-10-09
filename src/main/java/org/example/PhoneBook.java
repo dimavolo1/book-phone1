@@ -1,4 +1,44 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.TreeMap;
+
 public class PhoneBook {
+    TreeMap<String, String> phoneBook = new TreeMap<String, String>();
+
+    public boolean add(String name, String phoneNum) {
+        if (!phoneBook.containsKey(name)) {
+            phoneBook.put(name, phoneNum);
+            System.out.println("кол-во контактов: " + phoneBook.size());
+            return true;
+        }
+        System.out.println("Данное имя " + name + " уже есть в книге");
+        return false;
+    }
+
+    public String findByNumber(String phoneNum) {
+        for (String key : phoneBook.keySet()) {
+            if (phoneNum.equals(phoneBook.get(key))) {
+                return key;
+            }
+        }
+        return "Имя не найдено";
+    }
+    public  String findByName(String name) {
+        if (phoneBook.containsKey(name)) {
+            return phoneBook.get(name);
+        }
+        return "Номер не найден";
+    }
+
+
+    public ArrayList<String> printAllNames() {
+        ArrayList<String> mas = new ArrayList<String>();
+        for (String key : phoneBook.keySet()) {
+            mas.add(key);
+        }
+        return mas;
+    }
+
+
 }
