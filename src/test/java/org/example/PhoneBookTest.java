@@ -32,4 +32,11 @@ class PhoneBookTest {
         String expected = "Alex";
         Assertions.assertSame(expected, result);
     }
+    @Test
+    public void testFindByName() {
+        phoneBookTest.add("Alex", "123-123");
+        String result = phoneBookTest.findByName("Alex");
+        String expected = "123-123";
+        Assertions.assertSame(expected, result);
+    }
 }
