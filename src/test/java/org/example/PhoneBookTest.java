@@ -26,6 +26,10 @@ class PhoneBookTest {
 
 
     @Test
-    void findByNumber() {
+    public void testFindByNumber() {
+        phoneBookTest.add("Alex", "123-123");
+        String result = phoneBookTest.findByNumber("123-123");
+        String expected = "Alex";
+        Assertions.assertSame(expected, result);
     }
 }
