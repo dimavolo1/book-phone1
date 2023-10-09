@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -28,6 +29,12 @@ public class PhoneBook {
             return phoneBook.get(name);
         }
         return "Номер не найден";
+    }
+
+
+    public ArrayList<String> printAllNames() {
+        ArrayList<String> mas = new ArrayList<String>();
+        return null;
     }
 
 
